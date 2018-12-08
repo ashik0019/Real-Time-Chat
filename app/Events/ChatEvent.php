@@ -28,6 +28,7 @@ class ChatEvent implements ShouldBroadcastNow
     {
         $this->message = $message;
         $this->user = $user->name;
+        $this->dontBroadcastToCurrentUser();
     }
 
     /**

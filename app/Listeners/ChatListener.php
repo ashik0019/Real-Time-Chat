@@ -2,8 +2,10 @@
 
 namespace App\Listeners;
 
+use App\Events\ChatEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Nexmo\Call\Event;
 
 class ChatListener
 {
@@ -23,7 +25,7 @@ class ChatListener
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(ChatEvent  $event)
     {
         //
     }

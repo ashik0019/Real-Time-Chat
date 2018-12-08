@@ -18,16 +18,21 @@
 <body>
 <div class="container">
     <div class="row mt-5" id="app">
-        <div class="offset-4 col-4">
+        <div class="col-md-2"></div>
+        <div class=" col-md-8  col-sm-12">
             <li class="list-group-item active">Chat Room</li>
+
             <ul class="list-group" v-chat-scroll>
                 <message
-                    v-for="value in chat.message"
-                    :key="value.index"
-                    color="success"
+                    v-for="value, index in chat.message"
+                    :key=value.index
+                    :color= chat.color[index]
+                    :user = chat.user[index]
+                    :time = chat.time[index]
                 >@{{value}}
                 </message>
             </ul>
+            <div class="badge badge-pill badge-primary">@{{ typing }}</div>
             <input type="text" v-model="message" @keyup.enter="send()" class="form-control" placeholder="Type your message here..">
         </div>
     </div>
