@@ -20,7 +20,7 @@
     <div class="row mt-5" id="app">
         <div class="col-md-2"></div>
         <div class=" col-md-8  col-sm-12">
-            <li class="list-group-item active">Chat Room</li>
+            <li class="list-group-item active">Chat Room <span class="badge badge-warning badge-pill">@{{  numberOfUsers }}</span></li>
 
             <ul class="list-group" v-chat-scroll>
                 <message
